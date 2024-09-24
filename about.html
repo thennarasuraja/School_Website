@@ -19,6 +19,7 @@
             width: calc(100vw);
             left: 0;
             right: 0;
+            z-index: 5;
         }
         .backdrop-blur {
             background-color: rgba(85, 78, 78, 0.6); /* Semi-transparent dark background */
@@ -42,30 +43,64 @@
                float: left; 
                margin-right: 10px;
         }
-/* 
-        @media (min-width: 768px) {
-            .img_content{
-                padding-top: 500px;
-            }
-        } */
+    @media (max-width: 767px) {
+    .image{
+        text-align: center;
+    }
+    #nav-menu{
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        left: 0;
+        text-align: left;
+        background-color: rgb(41, 40, 40);
+        border-radius: 10px;
+
+
+        
+    }
+    .head_1{
+        font-size: 20px;
+    }
+}
+
+  @media (min-width: 768px) {
+    .nav {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;
+    font-size: 24px;
+  }
+  .head_1{
+        font-size: 40px;
+    }
+
+
+  }
+
     </style>
 </head>
 <body class="position-relative">
-    <header class="py-3 px-5 bg-black text-white position-fixed top-0 w-100" style="z-index: 5;">
-        <div class="container-fluid d-lg-flex align-items-center justify-content-between">
-            <div class="col-md-6 col-12 text-lg-start text-center">
-                <h1 class="text-danger fs-1">EDUCATION</h1>
+    <header class="py-1 bg-black text-white position-fixed top-0 w-100">
+        <div class="d-lg-flex d-flex  align-items-center px-5 justify-content-lg-between  container-fluid">
+          <div class="col-lg-6 col-12">
+            <p class="head_1 text-danger  pt-3">EDUCATION</p>
+          </div>
+          <div class="col-lg-6 col-12">
+            <!-- Hamburger Icon for Mobile/Tablet -->
+            <img src="./navigation.jpg" width="40px" height="40px" class="rounded d-lg-none " onclick="toggleNavbar()" id="image">
+            
+            <!-- Navigation Menu -->
+            <div class="nav flex-column flex-lg-row   d-lg-flex" id="nav-menu">
+              <a class="nav-link text-white h5 btn btn-primary fw-bold" href="./">Home</a>
+              <a class="nav-link text-white h5 btn btn-primary fw-bolder" href="./about.html">About</a>
+              <a class="nav-link text-white h5 btn btn-primary fw-bold" href="./service.html">Services</a>
+              <a class="nav-link text-white h5 btn btn-primary fw-bolder" href="#Contact">Contact</a>
             </div>
-            <div class="col-md-6 col-12 d-flex justify-content-start justify-content-lg-end ">
-                <nav class="nav">
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bold" href="./">Home</a>
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bold" href="#">About</a>
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bold" href="./service.html">Services</a>
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bold" href="#">Contact</a>
-                </nav>
-            </div>
+          </div>
         </div>
-    </header>
+      </header>
     
     
     <div class="about_img container-fluid pt-5">
@@ -130,7 +165,7 @@
         </div>
 
     </section>
-    <section class="py-2">
+    <section class="py-2" id="Contact">
         <div class=" p-5 rounded" style="background-color: rgb(54, 53, 53);">
             <div class="row text-white">
                 <div class="col-12 col-lg-4  h-40%">
@@ -155,6 +190,19 @@
         </div>
 
     </section>
+    <script>
+     function toggleNavbar() {
+        const navMenu = document.getElementById('nav-menu');
+        const currentDisplay = window.getComputedStyle(navMenu).display;
+
+        if (currentDisplay === "none") {
+            navMenu.style.display = "block";
+        } else {
+            navMenu.style.display = "none";
+        }
+    }
+
+    </script>
  
     
     

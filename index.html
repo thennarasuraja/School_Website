@@ -63,7 +63,29 @@
     .custom-fs-head{
         font-size: 1.25rem;
     }
-  }
+    .image{
+        text-align: center;
+    }
+    #nav-menu{
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        left: 0;
+        text-align: left;
+        background-color: rgb(41, 40, 40);
+        border-radius: 10px;
+
+
+        
+    }
+    .head_1{
+        font-size: 20px;
+    }
+    .paragraph_container{
+        font-size: 14px;
+    }
+}
 
   @media (min-width: 768px) {
     .custom-fs-lg {
@@ -72,6 +94,19 @@
     .custom-fs-text {
       font-size: 1.5rem; 
     }
+    .nav {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;
+    font-size: 24px;
+  }
+  .head_1{
+        font-size: 40px;
+    }
+    .paragraph_container{
+        font-size: 26px;
+    }
+
   }
 
 
@@ -82,24 +117,27 @@
     </style>    
 </head>
 <body class="position-relative">    
-    <header class="py-3 px-5 bg-black text-white position-fixed top-0 rounded">
-        <div class="d-lg-flex d-flex  align-items-center justify-content-lg-between container-fluid">
-            <div class="col-md-6 col-12 ">
-                <p class="head_1 text-danger fs-1">EDUCATION</p>
+    <header class="py-1 bg-black text-white position-fixed top-0 w-100">
+        <div class="d-lg-flex d-flex  align-items-center px-5 justify-content-lg-between  container-fluid">
+          <div class="col-lg-6 col-12">
+            <p class="head_1 text-danger  pt-3">EDUCATION</p>
+          </div>
+          <div class="col-lg-6 col-12">
+            <!-- Hamburger Icon for Mobile/Tablet -->
+            <img src="./navigation.jpg" width="40px" height="40px" class="rounded d-lg-none " onclick="toggleNavbar()" id="image">
+            
+            <!-- Navigation Menu -->
+            <div class="nav flex-column flex-lg-row   d-lg-flex" id="nav-menu">
+              <a class="nav-link text-white h5 btn btn-primary fw-bold" href="#">Home</a>
+              <a class="nav-link text-white h5 btn btn-primary fw-bolder" href="./about.html">About</a>
+              <a class="nav-link text-white h5 btn btn-primary fw-bold" href="./service.html">Services</a>
+              <a class="nav-link text-white h5 btn btn-primary fw-bolder" href="#Contact">Contact</a>
             </div>
-            <div class="col-md-6 col-12 d-flex justify-content-start align-items-center justify-content-lg-end">
-                <img src="./navigation.jpg" width="40px" height="40px" class="rounded" onclick="navbar()" id="image">
-                <div class="nav" id="nav-btn">
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bold" href="#">Home</a>
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bolder" href="./about.html">About</a>
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bold"  href="./service.html">Services</a>
-                    <a class="nav-link text-white fs-lg-4 h5 btn btn-primary fw-bolder">Contact</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </header>
+      </header>
     <div class="container-fluid text-white pt-5 " id="body" >
-        <section class="row d-flex align-items-center ">
+        <section class="row  d-flex align-items-center " style="padding-top: 50px;">
             <div class="col-lg-6 col-12   text-center">
                 <p class="display-1 ">WHO SAID EDUCATOIN WAS BORING ?</p>
                 <p class="h3  pt-1 text-success">We play and we learn</p>
@@ -256,7 +294,7 @@
             <div class="text-center fw-bold pt-4">
                 <h1>How To Enroll Your Child To a Class</h1>
             </div>
-            <div class="row  container px-lg-5 pt-lg-5 fs-5">
+            <div class="row  container px-lg-5 pt-lg-5 paragraph_container">
                 <div class="col-lg-6 col-12 text-center">
                     <p>Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id suscipit ex. Suspendisse
                         rhoncus
@@ -293,17 +331,17 @@
 
         </section>
         <section class="py-2">
-           <div class="p-5 rounded" style="background-color: rgb(102, 243, 243);">
+           <div class="py-5 px-2 rounded" style="background-color: rgb(102, 243, 243);">
             <div class="py-5 text-center text-black" >
                 <p class="h1">Facility</p>
                 <p class="display-4 fw-bold custom-fs-head">Make your Children's life Special</p>
             </div>
             <div class="d-flex ps-1 justify-content-center  align-items-center">
                 <div class="row container-fluid  text-center ">
-                    <div class="col-12 col-md-6 p-0 d-flex justify-content-center rounded w-full align-items-center">
+                    <div class="col-12 col-lg-6 p-0 d-flex justify-content-center rounded w-full align-items-center">
                         <img src="./sportskids.jpg" style="max-width: 100%; height: 100%;">
                     </div>
-                    <div class="col-12 col-md-6 gap-1  rounded bg-white py-5">
+                    <div class="col-12 col-lg-6 gap-1  rounded bg-white py-5">
                        <div class="text-black d-flex flex-column gap-4">
                     <p class="fw-bold custom-fs-lg">Relaxation and comfort</p>
                     <p class="custom-fs-text">Set up in 2000, Kidzcare is arranged in a wonderfully protected, Landmark Building. Phasellus
@@ -318,7 +356,7 @@
             </div>
            </div>
         </section>
-        <section class="py-2">
+        <section class="py-2" id="Contact">
             <div class=" p-5 rounded" style="background-color: rgb(54, 53, 53);">
                 <div class="row text-white">
                     <div class="col-12 col-lg-4  h-40%">
@@ -345,15 +383,17 @@
         </section>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
  <script>
     let nav = document.getElementById("nav-btn")
-    nav.style.display = "none";
     let image=document.getElementById("image")
     let readmore=document.getElementById("span-1")
     let readmore_1 = document.getElementById("span-2")
 
 
-    function navbar(){
+    function navbar(nav){
         if(nav.style.display=='none'){
             nav.style.display = "block";
             image.style.display="none"
@@ -374,10 +414,17 @@
         }
 
     }
+    function toggleNavbar() {
+        const navMenu = document.getElementById('nav-menu');
+        const currentDisplay = window.getComputedStyle(navMenu).display;
+
+        if (currentDisplay === "none") {
+            navMenu.style.display = "block";
+        } else {
+            navMenu.style.display = "none";
+        }
+    }
 
 </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 </body>
 </html>
